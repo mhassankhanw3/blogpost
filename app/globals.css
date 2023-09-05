@@ -1,27 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind apply;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.cl-internal-b3fm6y {
+  display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.cl-formButtonPrimary {
+  @apply py-4 bg-gray-800 hover:bg-gray-950;
+}
+.cl-userButtonBox {
+  @apply border border-gray-300 hover:border-gray-400 cursor-pointer transition-all rounded-full p-[2px];
+}
+.cl-userButtonPopoverFooter {
+  @apply hidden m-0;
+}
+
+.linkHover::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  /* top: 2px; */
+  /* left: -5px; */
+  /* right: 10px; */
+  position: absolute;
+  background-color: #047857;
+  border-radius: 50px 50px 50px 50px;
+  transform: scaleY(1);
+  /* transform-origin: left; */
+  transition: transform 0.2s ease;
+}
+
+.linkHover:hover::after {
+  transform: scaleY(1);
+}
+
+/* ---------------------->>>>>>>>>  loader  <<<<<<<<<<--------------------------- */
+
+.custom-loading-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Loader styles (same as previous CSS) */
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.blogCard {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.blogCard:hover {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
